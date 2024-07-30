@@ -1,0 +1,79 @@
+mkdir backend
+cd backend
+npm init -y
+npm install express mongoose bcryptjs jsonwebtoken cors
+npm install --save-dev nodemon
+
+
+backend/
+├── config/
+│   └── db.js
+├── controllers/
+│   ├── authController.js
+│   ├── projectController.js
+│   └── schoolController.js
+├── middleware/
+│   └── authMiddleware.js
+├── models/
+│   ├── User.js
+│   ├── School.js
+│   └── Project.js
+├── routes/
+│   ├── authRoutes.js
+│   ├── projectRoutes.js
+│   └── schoolRoutes.js
+├── .env
+├── index.js
+├── package.json
+
+
+
+const mongoose = require('mongoose');
+
+const connectDB = async () => {
+    try {
+        await mongoose.connect('mongodb://localhost:27017/swiss_contact', {
+            useNewUrlParser: true,
+            useUnifiedTopology: true,
+        });
+        console.log('MongoDB connected');
+    } catch (error) {
+        console.error('Error connecting to MongoDB:', error);
+        process.exit(1);
+    }
+};
+
+module.exports = connectDB;
+
+
+npm create vite@latest swiss_contact -- --template react
+
+
+
+src/
+├── components/
+│   ├── Admin/
+│   │   ├── Dashboard.jsx
+│   │   ├── ManageSchools.jsx
+│   │   ├── ManageProjects.jsx
+│   │   ├── ManageSettings.jsx
+│   │   └── Navbar.jsx
+│   ├── School/
+│   │   ├── SchoolDashboard.jsx
+│   │   ├── ManageProjects.jsx
+│   │   ├── ManageSettings.jsx
+│   │   └── Navbar.jsx
+│   └── Shared/
+│       ├── Sidebar.jsx
+│       └── PrivateRoute.jsx
+├── pages/
+│   ├── AdminLogin.jsx
+│   └── SchoolLogin.jsx
+└── App.jsx
+
+
+dgoXEGUBeEOZunQR
+
+mongodb+srv://niganzealain:dgoXEGUBeEOZunQR@cluster0.xml2hxd.mongodb.net/
+
+mongodb+srv://niganzealain:<dgoXEGUBeEOZunQR>@cluster0.xml2hxd.mongodb.net/?retryWrites=true&w=majority&appName=Cluster0
